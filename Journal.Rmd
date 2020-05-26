@@ -128,7 +128,7 @@ print(a)
 And keep going. Try to solve the problems with different scripts that provide the same solution. Good luck, Happy coding.
 
 # Problem 5
-```{r,results=NA}
+```{r,comment=NA}
 z<-rnorm(10,0,0.1)
 hist(z,probability=TRUE)
 lines(density(z),col=4)
