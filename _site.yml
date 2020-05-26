@@ -1,3 +1,4 @@
+
 name: "Emily C. Zabor"
 output_dir: "."
 navbar:
@@ -8,10 +9,16 @@ navbar:
     - text: "Research"
       href: index.html
     - text: "Journal"
-      href: journal.html
+      href: Journal.html
   right:
     - icon: fa-envelope fa-lg
       href: contact.html
+    - icon: fa-github fa-lg
+      href: http://github.com/zabore
+    - icon: fa-twitter fa-lg
+      href: https://twitter.com/zabormetrics
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/emily-zabor-59b902b7/
 output:
   html_document:
     theme: paper
