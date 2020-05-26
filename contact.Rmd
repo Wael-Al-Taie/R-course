@@ -1,8 +1,11 @@
 ---
-title: "contact"
-author: ""
+title: ""
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  word_document: default
 date: ""
-output: html_document
 ---
 
 ```{r setup, include=FALSE}
