@@ -1,6 +1,6 @@
-name: "Wael"
+name: "Wael's Site"
 navbar:
-  title: "Dalal"
+  title: "Wael Abdulateef Al-Taie"
   left:
     - text: "Home"
       href: index.html
