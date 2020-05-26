@@ -1,5 +1,6 @@
 
-name: "Wael's Site"
+name: "Emily C. Zabor"
+output_dir: "."
 navbar:
   title: "Wael Abdulateef Al-Taie"
   left:
@@ -7,8 +8,12 @@ navbar:
       href: Background.html
     - text: "Research"
       href: index.html
-    - text: "R course"
+    - text: "Journal"
       href: Journal.html
-    - text: "Links"
-      href: Links.html
-output_dir: "docs"
+  right:
+    - icon: fa-envelope fa-lg
+      href: contact.html
+output:
+  html_document:
+    theme: paper
+    css: 'styles.css'
