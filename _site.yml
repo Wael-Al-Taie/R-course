@@ -2,9 +2,9 @@ name: "Wael's Site"
 navbar:
   title: "Wael Abdulateef Al-Taie"
   left:
-    - text: "Home"
+    - text: "Research"
       href: index.html
-    - text: "Journal"
+    - text: "R course"
       href: Journal.html
     - text: "Links"
       href: Links.html
