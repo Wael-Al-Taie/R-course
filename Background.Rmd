@@ -1,0 +1,73 @@
+---
+title: "Background"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  word_document: default
+date: "20/05/2020"
+---
+
+```{r comment=NA}
+LaplacePo<-function(y,E0,V0,tol=1E-5,n=20)
+{#MF 04/10/18
+  z0<-E0
+  d<-1
+  for (i in 1:n)
+  {if (abs(d)>tol)
+  {ez<-exp(z0)
+  f<-y-(z0-E0)/V0-ez
+  fd<--(1/V0)-ez
+  d<-f/fd
+  z0<-z0-d
+  }
+  }
+  mean<-z0
+  var<- -1/fd
+  return(list(E1=mean,V1=var))
+}
+
+LaplacePo(y=33,E0=3.384,V0=0.034,tol=1E-5,n=20)
+```
+
+
+```{r,comment=NA}
+E0_eta<-c(3.384,3.384)
+V0_eta<-matrix(c(0.0340,0.0085,0.0085,0.034),ncol=2)
+V0_eta
+E1_eta<-c(3.646,3.443)  ### non-conjugate Laplace method.
+V1_eta<-c(0.0148,0.0165)  ### non-conjugate Laplace method.
+cov01<-V0_eta[,1]
+cov10<-t(cov01)
+E1_eta.given.x1<-E0_eta+(1/V0_eta[1,1])*(E1_eta[1]-E0_eta[1])*cov01
+E1_eta.given.x1
+
+cov02<-V0_eta[,2]
+cov20<-t(cov02)
+E1_eta.given.x2<-E0_eta+(1/V0_eta[2,2])*(E1_eta[2]-E0_eta[2])*cov02
+E1_eta.given.x2
+
+V1_eta.given.x1<-V0_eta-(1/V0_eta[1,1])*cov01%*%cov10+(V1_eta[1]/V0_eta[1,1]^2)*cov01%*%cov10
+V1_eta.given.x1
+
+V1_eta.given.x2<-V0_eta-(1/V0_eta[2,2])*cov02%*%cov20+(V1_eta[2]/V0_eta[2,2]^2)*cov02%*%cov20
+V1_eta.given.x2
+
+aa<-solve(V1_eta.given.x1)
+bb<-solve(V1_eta.given.x2)
+ss<-solve(V0_eta)
+dd<-aa+bb-ss
+dd
+
+V2_eta.given.x<-solve(dd)
+V2_eta.given.x
+
+betwbrac<-aa%*%E1_eta.given.x1+bb%*%E1_eta.given.x2-ss%*%E0_eta
+E2_eta.given.x<-V2_eta.given.x%*%betwbrac
+E2_eta.given.x
+
+Age<-c(1,2)
+plot(Age,E2_eta.given.x,ylab=expression(eta),type="o",pch=19,col=4,ylim=c(3,4)) #### Bayes linear kinematics
+lines(Age,E1_eta,col=2,ylab=expression(eta),pch=19,type="o") #### full- Bayes analysis
+```
+

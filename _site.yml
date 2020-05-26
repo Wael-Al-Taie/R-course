@@ -2,6 +2,8 @@ name: "Wael's Site"
 navbar:
   title: "Wael Abdulateef Al-Taie"
   left:
+    - text: "Background"
+      href: Background.html
     - text: "Research"
       href: index.html
     - text: "R course"

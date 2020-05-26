@@ -11,7 +11,7 @@
 
 
 
-<title>Bayesian Stat</title>
+<title>Background</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,6 +22,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -295,37 +297,87 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Bayesian Stat</h1>
+<h1 class="title toc-ignore">Background</h1>
+<h4 class="date">20/05/2020</h4>
 
 </div>
 
 
-<style type="text/css">
-.title {
-  display: none;
+<pre class="r"><code>LaplacePo&lt;-function(y,E0,V0,tol=1E-5,n=20)
+{#MF 04/10/18
+  z0&lt;-E0
+  d&lt;-1
+  for (i in 1:n)
+  {if (abs(d)&gt;tol)
+  {ez&lt;-exp(z0)
+  f&lt;-y-(z0-E0)/V0-ez
+  fd&lt;--(1/V0)-ez
+  d&lt;-f/fd
+  z0&lt;-z0-d
+  }
+  }
+  mean&lt;-z0
+  var&lt;- -1/fd
+  return(list(E1=mean,V1=var))
 }
 
-#getting-started img {
-  margin-right: 10px;
-}
+LaplacePo(y=33,E0=3.384,V0=0.034,tol=1E-5,n=20)</code></pre>
+<pre><code>$E1
+[1] 3.442737
 
-</style>
-<div class="row" style="padding-top: 30px;">
-<div class="col-sm-6">
-<h1 id="bayes-linear-kinematics"><strong>Bayes Linear kinematics</strong></h1>
-<p>This is a template example for lab journaling. Students in Matt Crump’s Human Cognition and Performance Lab will use this template to learn R, and other things. Students can replace this text with more fun things. People not in my lab can use this too.</p>
-<h2 id="how-to-use">How to use</h2>
-<ol style="list-style-type: decimal">
-<li><p>fork the repo for this website and follow instructions on read me to get set up. <a href="https://github.com/CrumpLab/LabJournalWebsite">https://github.com/CrumpLab/LabJournalWebsite</a></p></li>
-<li><p>Blog/journal what you are doing in R, by editing the Journal.Rmd. See the <a href="https://crumplab.github.io/LabJournalWebsite/Journal.html">Journal page</a> for an example of what to do to get started learning R.</p></li>
-<li><p>See the <a href="https://crumplab.github.io/LabJournalWebsite/Links.html">links page</a> for lots of helpful links on learning R.</p></li>
-<li><p>Change everything to make it your own.</p></li>
-</ol>
-</div>
-<div class="col-sm-6">
-<h3 id="crump-lab-human-cognition-and-performance"><a href="https://crumplab.github.io">Crump Lab: Human Cognition and Performance</a></h3>
-<p><a href = "https://crumplab.github.io"> <img src="images/logo.png" /> </a></p>
-</div>
+$V1
+[1] 0.01647875</code></pre>
+<pre class="r"><code>E0_eta&lt;-c(3.384,3.384)
+V0_eta&lt;-matrix(c(0.0340,0.0085,0.0085,0.034),ncol=2)
+V0_eta</code></pre>
+<pre><code>       [,1]   [,2]
+[1,] 0.0340 0.0085
+[2,] 0.0085 0.0340</code></pre>
+<pre class="r"><code>E1_eta&lt;-c(3.646,3.443)  ### non-conjugate Laplace method.
+V1_eta&lt;-c(0.0148,0.0165)  ### non-conjugate Laplace method.
+cov01&lt;-V0_eta[,1]
+cov10&lt;-t(cov01)
+E1_eta.given.x1&lt;-E0_eta+(1/V0_eta[1,1])*(E1_eta[1]-E0_eta[1])*cov01
+E1_eta.given.x1</code></pre>
+<pre><code>[1] 3.6460 3.4495</code></pre>
+<pre class="r"><code>cov02&lt;-V0_eta[,2]
+cov20&lt;-t(cov02)
+E1_eta.given.x2&lt;-E0_eta+(1/V0_eta[2,2])*(E1_eta[2]-E0_eta[2])*cov02
+E1_eta.given.x2</code></pre>
+<pre><code>[1] 3.39875 3.44300</code></pre>
+<pre class="r"><code>V1_eta.given.x1&lt;-V0_eta-(1/V0_eta[1,1])*cov01%*%cov10+(V1_eta[1]/V0_eta[1,1]^2)*cov01%*%cov10
+V1_eta.given.x1</code></pre>
+<pre><code>       [,1]   [,2]
+[1,] 0.0148 0.0037
+[2,] 0.0037 0.0328</code></pre>
+<pre class="r"><code>V1_eta.given.x2&lt;-V0_eta-(1/V0_eta[2,2])*cov02%*%cov20+(V1_eta[2]/V0_eta[2,2]^2)*cov02%*%cov20
+V1_eta.given.x2</code></pre>
+<pre><code>           [,1]     [,2]
+[1,] 0.03290625 0.004125
+[2,] 0.00412500 0.016500</code></pre>
+<pre class="r"><code>aa&lt;-solve(V1_eta.given.x1)
+bb&lt;-solve(V1_eta.given.x2)
+ss&lt;-solve(V0_eta)
+dd&lt;-aa+bb-ss
+dd</code></pre>
+<pre><code>          [,1]      [,2]
+[1,] 69.528352 -7.843137
+[2,] -7.843137 62.566845</code></pre>
+<pre class="r"><code>V2_eta.given.x&lt;-solve(dd)
+V2_eta.given.x</code></pre>
+<pre><code>            [,1]        [,2]
+[1,] 0.014588921 0.001828811
+[2,] 0.001828811 0.016212159</code></pre>
+<pre class="r"><code>betwbrac&lt;-aa%*%E1_eta.given.x1+bb%*%E1_eta.given.x2-ss%*%E0_eta
+E2_eta.given.x&lt;-V2_eta.given.x%*%betwbrac
+E2_eta.given.x</code></pre>
+<pre><code>         [,1]
+[1,] 3.648803
+[2,] 3.474346</code></pre>
+<pre class="r"><code>Age&lt;-c(1,2)
+plot(Age,E2_eta.given.x,ylab=expression(eta),type=&quot;o&quot;,pch=19,col=4,ylim=c(3,4)) #### Bayes linear kinematics
+lines(Age,E1_eta,col=2,ylab=expression(eta),pch=19,type=&quot;o&quot;) #### full- Bayes analysis</code></pre>
+<p><img src="Background_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 
 
 
