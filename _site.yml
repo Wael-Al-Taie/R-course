@@ -7,7 +7,7 @@ navbar:
       href: Background.html
     - text: "Research"
       href: index.html
-    - text: "Programming"
+    - text: "journal"
       href: journal.html
   right:
     - icon: fa-envelope fa-lg
