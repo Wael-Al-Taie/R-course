@@ -10,9 +10,6 @@ navbar:
       href: index.html
     - text: "Journal"
       href: Journal.html
-  right:
-    - icon: fa-envelope fa-lg
-      href: contact.html
 output:
   html_document:
     theme: paper

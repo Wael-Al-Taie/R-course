@@ -1,5 +1,5 @@
 ---
-title: "Bayesian Stat"
+title: "Bayesian"
 output: html_document
 ---
 
