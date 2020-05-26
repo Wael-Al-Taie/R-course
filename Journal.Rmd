@@ -126,3 +126,11 @@ print(a)
 # Replace this with problem 4
 
 And keep going. Try to solve the problems with different scripts that provide the same solution. Good luck, Happy coding.
+
+# Problem 5
+```{r}
+z<-rnorm(100,0,0.1)
+hist(z,probability=TRUE)
+lines(density(z),col=4)
+```
+
