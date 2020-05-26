@@ -1,6 +1,6 @@
 name: "Wael's Site"
 navbar:
-  title: "Wael's Webweb"
+  title: "Wael's Web"
   left:
     - text: "Home"
       href: index.html
