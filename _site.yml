@@ -9,8 +9,6 @@ navbar:
       href: index.html
     - text: "Programming"
       href: journal.html
-    - text: "Software"
-      href: journal1.html
   right:
     - icon: fa-envelope fa-lg
       href: contact.html
