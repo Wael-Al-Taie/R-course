@@ -129,7 +129,7 @@ And keep going. Try to solve the problems with different scripts that provide th
 
 # Problem 5
 ```{r}
-z<-rnorm(1000,0,0.1)
+z<-rnorm(10,0,0.1)
 hist(z,probability=TRUE)
 lines(density(z),col=4)
 ```
