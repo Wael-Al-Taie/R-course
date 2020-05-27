@@ -15,28 +15,24 @@ knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE)
 ```
 <p>&nbsp;</p>
 
-This is a mini course about R programming language with some useful and important functions that we need to know before we learn more advanced and tricky functions. I hope you enjoy it and please feel free to ask any question. 
+This is a mini course about R programming language with some useful and important functions that we need to know before we learn more advanced and tricky functions. I hope you enjoy it and please feel free to ask questions. 
 
 # Introduction to <tt>`R`</tt>
-# Problem 1
-
-Do simple math with numbers, addition, subtraction, multiplication, division
+We can use R as a calculator. So, it is simple to use addition, subtraction, multiplication and division.
 
 ```{r,comment=NA}
-1+2
-2*5
-5/3
-(1+6+4)/5
-
+15+20
+12*12
+126/3
+(2+5+4)/5
 ```
+if you want to know more information about any function in R, you need to type help("function name") or ?function name.
+
+<!-- # Laplace approximation -->
+<!-- If we have one-dimensional numerical integration, to find out that integration. We could possibly use a Laplace approximation. -->
 
 
-
-# Laplace approximation
-We use Laplace approximation to find the posterior mean and posterior variance for \(\eta\).
-
-
-# Example from my thesis.
+<!-- # Example from my thesis. -->
 
 
 
