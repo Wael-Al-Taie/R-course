@@ -378,18 +378,27 @@ div.tocify {
 
 <p>IMPORTANT: You can delete everything in here and start fresh. You might want to start by not deleting anything above this line until you know what that stuff is doing.</p>
 <p>This is an .Rmd file. It is plain text with special features. Any time you write just like this, it will be compiled to normal text in the website. If you put a # in front of your text, it will create a top level-header.</p>
-<div id="my-first-post" class="section level1">
-<h1>My first post</h1>
-<p>2018 | 7 | 23 Last compiled: 2020-05-27</p>
-<p>Notice that whatever you define as a top level header, automatically gets put into the table of contents bar on the left.</p>
-<div id="second-level-header" class="section level2">
-<h2>Second level header</h2>
-<p>You can add more headers by adding more hashtags. These won’t be put into the table of contents</p>
-<div id="third-level-header" class="section level3">
-<h3>third level header</h3>
-<p>Here’s an even lower level header</p>
+<div id="introduction-to-r" class="section level1">
+<h1>Introduction to <tt><code>R</code></tt></h1>
 </div>
+<div id="problem-1" class="section level1">
+<h1>Problem 1</h1>
+<p>Do simple math with numbers, addition, subtraction, multiplication, division</p>
+<pre class="r"><code>1+2</code></pre>
+<pre><code>[1] 3</code></pre>
+<pre class="r"><code>2*5</code></pre>
+<pre><code>[1] 10</code></pre>
+<pre class="r"><code>5/3</code></pre>
+<pre><code>[1] 1.666667</code></pre>
+<pre class="r"><code>(1+6+4)/5</code></pre>
+<pre><code>[1] 2.2</code></pre>
 </div>
+<div id="laplace-approximation" class="section level1">
+<h1>Laplace approximation</h1>
+<p>We use Laplace approximation to find the posterior mean and posterior variance for <span class="math inline">\(\eta\)</span>.</p>
+</div>
+<div id="example-from-my-thesis." class="section level1">
+<h1>Example from my thesis.</h1>
 </div>
 <div id="my-second-post-note-the-order" class="section level1">
 <h1>My second post (note the order)</h1>
@@ -402,7 +411,7 @@ div.tocify {
 <p>So, let’s say you are learning how to make a histogram in R. For example, maybe you want to sample 100 numbers from a normal distribution with mean = 0, and standard deviation =1, and then you want to plot a histogram. You can do this right here by using an r code block, like this:</p>
 <pre class="r"><code>samples &lt;- rnorm(100, mean=0, sd=1)
 hist(samples)</code></pre>
-<p><img src="Journal_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><img src="Journal_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>When you knit this R Markdown document, you will see that the histogram is printed to the page, along with the R code. This document can be set up to hide the R code in the webpage, just delete the comment (hashtag), from the cold folding option in the yaml header up top. For purposes of letting yourself see the code, and me see the code, best to keep it the way that it is. You learn all of these things and more can be customized in each R code block.</p>
 </div>
 <div id="the-big-idea" class="section level1">
@@ -415,7 +424,7 @@ hist(samples)</code></pre>
 <p>I wrote an <a href="https://crumplab.github.io/programmingforpsych/">introductory programming book that introduces R</a>, and gives some <a href="https://crumplab.github.io/programmingforpsych/programming-challenges-i-learning-the-fundamentals.html">concrete problems for you to solve</a>.</p>
 <p>To get the hang of journaling and solving the problems to learn programming, my suggestion is that you use this .Rmd file to solve the problems. It would look like this:</p>
 </div>
-<div id="problem-1" class="section level1">
+<div id="problem-1-1" class="section level1">
 <h1>Problem 1</h1>
 <p>Do simple math with numbers, addition, subtraction, multiplication, division</p>
 <pre class="r"><code>1+2</code></pre>
@@ -494,10 +503,13 @@ print(a)</code></pre>
 <pre class="r"><code>z&lt;-rnorm(10,0,0.1)
 hist(z,probability=TRUE)
 lines(density(z),col=4)</code></pre>
-<p><img src="Journal_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="Journal_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<pre class="r"><code>(z+5)</code></pre>
+<pre><code> [1] 5.040509 5.230089 4.955395 4.889410 5.078877 4.890295 4.888450 5.079061
+ [9] 5.072605 5.216459</code></pre>
 <pre class="r"><code>summary(z) ### Give summary of the distribution</code></pre>
-<pre><code>     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
--0.222865 -0.109631 -0.027229 -0.056144  0.005077  0.045655 </code></pre>
+<pre><code>    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+-0.11155 -0.09343  0.05656  0.03411  0.07901  0.23009 </code></pre>
 </div>
 
 
