@@ -7,8 +7,7 @@ output:
   word_document: default
 date: ""
 ---
-
-
+<p>&nbsp;</p>
 I am a lecturer in statistics. I obtained my PhD from Newcastle University, School of Mathematics, Statistics and Physics in March 2020. I had a master in statistics from Mosul University, College of Mathematics and Computer sciences in 2006. In addition, I had a Bachelor in statistics form Mosul University, College of Mathematics and Computer Sciences in 2002.
 
 My Research interest in the area of Bayesian statistics and focus on Bayes linear methods and Bayesian networks. My thesis has the title "Bayes linear Bayes network models for medical diagnosis and prognosis".
