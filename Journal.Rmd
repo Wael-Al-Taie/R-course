@@ -15,9 +15,12 @@ knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE)
 ```
 <p>&nbsp;</p>
 
-This is a mini course about R programming language with some useful and important functions that we need to know before we learn more advanced and tricky functions. I hope you enjoy it and please feel free to ask questions. 
+# About <tt>`R`</tt> and <tt>`RStudio`</tt>
+R is a free open-source programming language that can be used widely for statistical analysis. Another free program is Rstudio, that provides a nice graphic interface for R. We need to download R first, then download Rstudio. Both can run on PCs, Macs or Linux.
 
 # Introduction to <tt>`R`</tt>
+This is a mini course about R programming language with some useful and important functions that we need to know before we learn more advanced and tricky functions. I hope you enjoy it and please feel free to ask questions. 
+
 We can use R as a calculator. So, it is simple to use addition, subtraction, multiplication and division.
 
 ```{r,comment=NA}
