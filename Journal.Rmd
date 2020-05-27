@@ -22,8 +22,8 @@ We can use R as a calculator. So, it is simple to use addition, subtraction, mul
 
 ```{r,comment=NA}
 15+20
-12*12
-126/3
+12*12 # * is multiplication sign.
+126/3 # / is division sign.
 (2+5+4)/5
 ```
 if you want to know more information about any function in R, you need to type help("function name") or ?function name.
