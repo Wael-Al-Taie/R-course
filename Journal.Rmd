@@ -188,7 +188,7 @@ f<-function(x,n)
 x<-c(1:3)
 f(x,n)
 ```
-Now to check if our function is correct, we have an intrinsic functions or built-in functions in R to calculate the mean and the variance for data set. So,
+Now to check if our function is correct, we have intrinsic functions or built-in functions in R to calculate the mean and the variance for data set. So,
 ```{r, comment=NA}
 mean(x);var(x)
 
