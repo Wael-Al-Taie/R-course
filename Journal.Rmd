@@ -84,7 +84,7 @@ Do simple math with numbers, addition, subtraction, multiplication, division
 
 ```
 
-# Problem 2
+# Problem 2: Variable assignment
 
 Put numbers into variables, do simple math on the variables
 
