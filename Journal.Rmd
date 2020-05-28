@@ -187,6 +187,12 @@ f<-function(x,n)
 
 x<-c(1:3)
 f(x,n)
-mean(x);var(x)
 ```
+Now to check if our function is correct, we have an intrinsic functions in R that calculate the mean and the variance. So,
+```{r, comment=NA}
+mean(x);var(x)
+
+```
+
+
 
