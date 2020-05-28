@@ -21,13 +21,13 @@ R is a free open-source programming language that can be used widely for statist
 # Introduction to <tt>`R`</tt>
 This is a mini course about R programming language with some useful and important functions that we need to know before we learn more advanced and tricky functions. I hope you enjoy it and please feel free to ask questions. 
 
-We can use R as a calculator. So, it is simple to use addition, subtraction, multiplication and division.
+We can use R as a calculator. We can use addition, subtraction, multiplication and division very easily in R. For example,
 
 ```{r,comment=NA}
 15+20
 12*12 # * is multiplication sign.
 126/3 # / is division sign.
-(2+5+4)/5
+(2+5+7)/5
 ```
 if you want to know more information about any function in R, you need to type help("function name") or ?function name.
 
@@ -39,56 +39,11 @@ if you want to know more information about any function in R, you need to type h
 
 <!-- # Example from my thesis. -->
 
-
-
-# My second post (note the order)
-
-2018 | 7 | 23 Last compiled: `r Sys.Date()`
-
-I'm writing this tutorial going from the top down. And, this is how it will be printed. So, notice the second post is second in the list. If you want your most recent post to be at the top, then make a new post starting at the top. If you want the oldest first, do, then keep adding to the bottom
-
-# Adding some <tt>`R`</tt> stuff
-
-So far this is just a blog where you can write in plain text and serve your writing to a webpage. One of the main purposes of this lab journal is to record your progress learning R. The reason I am asking you to use this process is because you can both make a website, and a lab journal, and learn R all in R-studio. This makes everything really convenient and in the sam place. 
-
-So, let's say you are learning how to make a histogram in R. For example, maybe you want to sample 100 numbers from a normal distribution with mean = 0, and standard deviation =1, and then you want to plot a histogram. You can do this right here by using an r code block, like this:
-
-```{r}
-samples <- rnorm(100, mean=0, sd=1)
-hist(samples)
-```
-
-When you knit this R Markdown document, you will see that the histogram is printed to the page, along with the R code. This document can be set up to hide the R code in the webpage, just delete the comment (hashtag), from the cold folding option in the yaml header up top. For purposes of letting yourself see the code, and me see the code, best to keep it the way that it is. You learn all of these things and more can be customized in each R code block.
-
-# The big idea
-
-Use this lab journal to record what you do in R. This way I will be able to see what you are doing and help you along the way. You will also be creating a repository of all the things you do. You can make posts about everything. Learning specific things in R (project unrelated), and doing things for the project that we will discuss at the beginning of the Fall semester. You can get started now by fiddling around with googling things, and trying stuff out in R. I've placed some helpful starting links in the links page on this website
-
-# What can you do right now by yourself?
-
-It's hard to learn programming when you don't have specific problems that you are trying to solve. Everything just seems abstract.
-
-I wrote an [introductory programming book that introduces R](https://crumplab.github.io/programmingforpsych/), and gives some [concrete problems for you to solve](https://crumplab.github.io/programmingforpsych/programming-challenges-i-learning-the-fundamentals.html). 
-
-To get the hang of journaling and solving the problems to learn programming, my suggestion is that you use this .Rmd file to solve the problems. It would look like this:
-
-# Problem 1
-
-Do simple math with numbers, addition, subtraction, multiplication, division
-
-```{r}
-1+2
-2*5
-5/3
-(1+6+4)/5
-
-```
-
-# Problem 2: Variable assignment
+# Variable assignment
 
 Put numbers into variables, do simple math on the variables
 
-```{r}
+```{r, comment=NA}
 a<-1
 b<-2
 a+b
@@ -101,17 +56,45 @@ d/e
 
 ```
 
+# Data types
+There are different types of data in R such as double, character and logical data.
+
+# Vectors
+
+# Matrices
+
+
+
+# Simple stuff to do with some <tt>`R`</tt>
+
+If you would like to make a histogram in R. For instance, we want to generate a sample with 100 numbers from a normal distribution with mean = 0, and standard deviation = 0.5, and then we want to plot a histogram. We can do this here by using the folowing R code:
+
+```{r}
+samples <- rnorm(100, mean=0, sd=0.5)
+hist(samples,breaks=10)
+#hist(samples, prob)
+#lines(density(samples),col=4)
+```
+
+
+# What can you do right now by yourself?
+
+It's hard to learn programming when you don't have specific problems that you are trying to solve. Everything just seems abstract.
+
+I wrote an [introductory programming book that introduces R](https://crumplab.github.io/programmingforpsych/), and gives some [concrete problems for you to solve](https://crumplab.github.io/programmingforpsych/programming-challenges-i-learning-the-fundamentals.html). 
+
+
 # Problem 3
 
 Write code that will place the numbers 1 to 100 separately into a variable using for loop. Then, again using the seq function.
 
-```{r}
+```{r, comment=NA}
 # for loop solution
 # i becomes the number 1 to 100 at each step of the loop
 
 
-a <- length(100) # make empty variable, set length to 100
-for (i in 1:100){
+a <- length(20) # make empty variable, set length to 100
+for (i in 1:20){
   a[i] <-i #assigns the number in i, to the ith index of a
 }
 
@@ -120,20 +103,20 @@ print(a)
 # for loop solution #2
 
 a<-c() #create empty variable using combine command
-for (i in 1:100){
+for (i in 1:20){
   a<-c(a,i) # keeps combining a with itself and the new number in i
 }
 print(a)
 
 # seq solution
-a <- seq(1,100,1) # look up help for seq using ?seq() in console
+a <- seq(1,20,1) # look up help for seq using ?seq() in console
 print(a)
 
 ```
 
 # Replace this with problem 4
 
-And keep going. Try to solve the problems with different scripts that provide the same solution. Good luck, Happy coding.
+And keep going. Try to solve the problems with different scripts that provide the same solution. 
 
 # Problem 5
 ```{r,comment=NA}
@@ -195,4 +178,5 @@ mean(x);var(x)
 ```
 
 
+Good luck and Happy coding.
 
