@@ -59,6 +59,12 @@ d/e
 # Data types
 There are different types of data in R such as double, character and logical data.
 
+- Double data:
+
+- Character data:
+
+- Logical data:
+
 # Vectors
 
 # Matrices
