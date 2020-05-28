@@ -182,10 +182,11 @@ f<-function(x,n)
   n<-length(x)
   ss<-sum((x-xbar)^2)
   v<-ss/(n-1)
-  return(list(xbar,v))
+  return(list(xbar=xbar,v=v))
 }
 
 x<-c(1:3)
 f(x,n)
+mean(x);var(x)
 ```
 
