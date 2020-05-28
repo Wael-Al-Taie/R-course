@@ -144,3 +144,48 @@ lines(density(z),col=4)
 summary(z) ### Give summary of the distribution
 ```
 
+# Laplace approximation
+```{r,comment=NA}
+### It is true and I checked it for Bernoulli likelihood and
+### normal prior distribution with variance=1. Albumin has 0 and 1.
+
+Laplacealbumin<-function(y,E0,tol=1E-5,n=20)
+{#MF 04/10/18
+  z0<-E0
+  d<-1
+  for (i in 1:n)
+  {if (abs(d)>tol)
+  {ez<-exp(z0)
+  pz<-ez/(1+ez)
+  f<-y-(z0-E0)-pz
+  fd<--(1+pz*(1-pz))
+  d<-f/fd
+  z0<-z0-d
+  }
+  }
+  mean<-z0
+  var<- -1/fd
+  return(list(E1=mean,V1=var))
+}
+
+Laplacealbumin(y=1,E0=0,tol=1E-5,n=20)
+```
+
+Simple function to find the mean and the variance of a set of data.
+```{r,comment=NA}
+## Simple function to find the mean and the variance for 
+## set of data.
+
+f<-function(x,n)
+{
+  xbar<-mean(x)
+  n<-length(x)
+  ss<-sum((x-xbar)^2)
+  v<-ss/(n-1)
+  return(list(xbar,v))
+}
+
+x<-c(1:3)
+f(x,n)
+```
+
