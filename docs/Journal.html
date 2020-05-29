@@ -11,7 +11,7 @@
 
 
 
-<title></title>
+<title>Journal.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -422,7 +422,14 @@ d+e</code></pre>
 <h1>Data types</h1>
 <p>There are different types of data in R such as double, character and logical data.</p>
 <ul>
-<li><p>Double data:</p></li>
+<li>Double data: When we deal with “numbers” in R, then the type of data is called <span style="color:blue;">double</span>.</li>
+</ul>
+<p>We can check if the variable is double or not using the following function.</p>
+<pre class="r"><code>x&lt;-5
+is.double(x)</code></pre>
+<pre><code>[1] TRUE</code></pre>
+<p>So the answer is true. That means the variable x is double in R.</p>
+<ul>
 <li><p>Character data:</p></li>
 <li><p>Logical data:</p></li>
 </ul>
@@ -438,7 +445,7 @@ d+e</code></pre>
 <p>If you would like to make a histogram in R. For instance, we want to generate a sample with 100 numbers from a normal distribution with mean = 0, and standard deviation = 0.5, and then we want to plot a histogram. We can do this here by using the folowing R code:</p>
 <pre class="r"><code>samples &lt;- rnorm(100, mean=0, sd=0.5)
 hist(samples,breaks=10)</code></pre>
-<p><img src="Journal_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="Journal_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <pre class="r"><code>#hist(samples, prob)
 #lines(density(samples),col=4)</code></pre>
 </div>
@@ -483,13 +490,13 @@ print(a)</code></pre>
 <pre class="r"><code>z&lt;-rnorm(10,0,0.1)
 hist(z,probability=TRUE)
 lines(density(z),col=4)</code></pre>
-<p><img src="Journal_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="Journal_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <pre class="r"><code>(z+5)</code></pre>
-<pre><code> [1] 5.023378 4.925454 5.007843 4.921779 4.988147 4.978557 4.832703 5.126184
- [9] 4.997856 4.986433</code></pre>
+<pre><code> [1] 4.993138 4.920617 5.048647 4.984269 5.011087 4.821314 5.081397 5.078800
+ [9] 5.055427 4.948113</code></pre>
 <pre class="r"><code>summary(z) ### Give summary of the distribution</code></pre>
 <pre><code>     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
--0.167297 -0.061270 -0.012710 -0.021167  0.005346  0.126184 </code></pre>
+-0.178686 -0.042848  0.002113 -0.005719  0.053732  0.081397 </code></pre>
 </div>
 <div id="laplace-approximation" class="section level1">
 <h1>Laplace approximation</h1>

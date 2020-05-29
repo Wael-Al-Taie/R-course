@@ -59,7 +59,15 @@ d/e
 # Data types
 There are different types of data in R such as double, character and logical data.
 
-- Double data:
+- Double data: When we deal with "numbers" in R, then the type of data is called <span style="color:blue;">double</span>.
+
+We can check if the variable is double or not using the following function.
+```{r,comment=NA}
+x<-5
+is.double(x)
+```
+So the answer is true. That means the variable x is double in R.
+
 
 - Character data:
 
