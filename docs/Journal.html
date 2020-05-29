@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Wael Abdulateef Al-Taie</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="Background.html">Background</a>
+</li>
+<li>
+  <a href="index.html">Research</a>
+</li>
+<li>
+  <a href="Journal.html">Programming</a>
+</li>
+<li>
+  <a href="Links.html">Links</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p>
+ 
+</p>
+<div id="about-r-and-rstudio" class="section level1">
+<h1>About <tt><code>R</code></tt> and <tt><code>RStudio</code></tt></h1>
+<p>R is a free open-source programming language that can be used widely for statistical analysis. Another free program is Rstudio, that provides a nice graphic interface for R. We need to download R first, then download Rstudio. Both can run on PCs, Macs or Linux.</p>
+</div>
+<div id="introduction-to-r" class="section level1">
+<h1>Introduction to <tt><code>R</code></tt></h1>
+<p>This is a mini course about R programming language with some useful and important functions that we need to know before we learn more advanced and tricky functions. I hope you enjoy it and please feel free to ask questions.</p>
+<p>We can use R as a calculator. We can use addition, subtraction, multiplication and division very easily in R. For example,</p>
+<pre class="r"><code>15+20</code></pre>
+<pre><code>[1] 35</code></pre>
+<pre class="r"><code>12*12 # * is multiplication sign.</code></pre>
+<pre><code>[1] 144</code></pre>
+<pre class="r"><code>126/3 # / is division sign.</code></pre>
+<pre><code>[1] 42</code></pre>
+<pre class="r"><code>(2+5+7)/5</code></pre>
+<pre><code>[1] 2.8</code></pre>
+<p>if you want to know more information about any function in R, you need to type help(“function name”) or ?function name.</p>
+<ul>
+<li>Notice that everyting comes after hashtag # will be ignored by R.</li>
+</ul>
+<!-- # Laplace approximation -->
+<!-- If we have one-dimensional numerical integration, to find out that integration. We could possibly use a Laplace approximation. -->
+<!-- # Example from my thesis. -->
+</div>
+<div id="variable-assignment" class="section level1">
+<h1>Variable assignment</h1>
+<p>Put numbers into variables, do simple math on the variables</p>
+<pre class="r"><code>a&lt;-1
+b&lt;-2
+a+b</code></pre>
+<pre><code>[1] 3</code></pre>
+<pre class="r"><code>d&lt;-c(1,2,3)
+e&lt;-c(5,6,7)
+d+e</code></pre>
+<pre><code>[1]  6  8 10</code></pre>
+<pre class="r"><code>d*e</code></pre>
+<pre><code>[1]  5 12 21</code></pre>
+<pre class="r"><code>d/e</code></pre>
+<pre><code>[1] 0.2000000 0.3333333 0.4285714</code></pre>
+</div>
+<div id="data-types" class="section level1">
+<h1>Data types</h1>
+<p>There are different types of data in R such as double, character and logical data.</p>
+<ul>
+<li><p>Double data:</p></li>
+<li><p>Character data:</p></li>
+<li><p>Logical data:</p></li>
+</ul>
+</div>
+<div id="vectors" class="section level1">
+<h1>Vectors</h1>
+</div>
+<div id="matrices" class="section level1">
+<h1>Matrices</h1>
+</div>
+<div id="simple-stuff-to-do-with-some-r" class="section level1">
+<h1>Simple stuff to do with some <tt><code>R</code></tt></h1>
+<p>If you would like to make a histogram in R. For instance, we want to generate a sample with 100 numbers from a normal distribution with mean = 0, and standard deviation = 0.5, and then we want to plot a histogram. We can do this here by using the folowing R code:</p>
+<pre class="r"><code>samples &lt;- rnorm(100, mean=0, sd=0.5)
+hist(samples,breaks=10)</code></pre>
+<p><img src="Journal_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>#hist(samples, prob)
+#lines(density(samples),col=4)</code></pre>
+</div>
+<div id="what-can-you-do-right-now-by-yourself" class="section level1">
+<h1>What can you do right now by yourself?</h1>
+<p>It’s hard to learn programming when you don’t have specific problems that you are trying to solve. Everything just seems abstract.</p>
+<p>I wrote an <a href="https://crumplab.github.io/programmingforpsych/">introductory programming book that introduces R</a>, and gives some <a href="https://crumplab.github.io/programmingforpsych/programming-challenges-i-learning-the-fundamentals.html">concrete problems for you to solve</a>.</p>
+</div>
+<div id="problem-3" class="section level1">
+<h1>Problem 3</h1>
+<p>Write code that will place the numbers 1 to 100 separately into a variable using for loop. Then, again using the seq function.</p>
+<pre class="r"><code># for loop solution
+# i becomes the number 1 to 100 at each step of the loop
+
+
+a &lt;- length(20) # make empty variable, set length to 100
+for (i in 1:20){
+  a[i] &lt;-i #assigns the number in i, to the ith index of a
+}
+
+print(a)</code></pre>
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20</code></pre>
+<pre class="r"><code># for loop solution #2
+
+a&lt;-c() #create empty variable using combine command
+for (i in 1:20){
+  a&lt;-c(a,i) # keeps combining a with itself and the new number in i
+}
+print(a)</code></pre>
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20</code></pre>
+<pre class="r"><code># seq solution
+a &lt;- seq(1,20,1) # look up help for seq using ?seq() in console
+print(a)</code></pre>
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20</code></pre>
+</div>
+<div id="replace-this-with-problem-4" class="section level1">
+<h1>Replace this with problem 4</h1>
+<p>And keep going. Try to solve the problems with different scripts that provide the same solution.</p>
+</div>
+<div id="problem-5" class="section level1">
+<h1>Problem 5</h1>
+<pre class="r"><code>z&lt;-rnorm(10,0,0.1)
+hist(z,probability=TRUE)
+lines(density(z),col=4)</code></pre>
+<p><img src="Journal_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code>(z+5)</code></pre>
+<pre><code> [1] 5.023378 4.925454 5.007843 4.921779 4.988147 4.978557 4.832703 5.126184
+ [9] 4.997856 4.986433</code></pre>
+<pre class="r"><code>summary(z) ### Give summary of the distribution</code></pre>
+<pre><code>     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+-0.167297 -0.061270 -0.012710 -0.021167  0.005346  0.126184 </code></pre>
+</div>
+<div id="laplace-approximation" class="section level1">
+<h1>Laplace approximation</h1>
+<pre class="r"><code>### It is true and I checked it for Bernoulli likelihood and
+### normal prior distribution with variance=1. Albumin has 0 and 1.
+
+Laplacealbumin&lt;-function(y,E0,tol=1E-5,n=20)
+{#MF 04/10/18
+  z0&lt;-E0
+  d&lt;-1
+  for (i in 1:n)
+  {if (abs(d)&gt;tol)
+  {ez&lt;-exp(z0)
+  pz&lt;-ez/(1+ez)
+  f&lt;-y-(z0-E0)-pz
+  fd&lt;--(1+pz*(1-pz))
+  d&lt;-f/fd
+  z0&lt;-z0-d
+  }
+  }
+  mean&lt;-z0
+  var&lt;- -1/fd
+  return(list(E1=mean,V1=var))
+}
+
+Laplacealbumin(y=1,E0=0,tol=1E-5,n=20)</code></pre>
+<pre><code>$E1
+[1] 0.4010581
+
+$V1
+[1] 0.8063147</code></pre>
+<p>Simple function to find the mean and the variance of a set of data.</p>
+<pre class="r"><code>## Simple function to find the mean and the variance for 
+## set of data.
+
+f&lt;-function(x,n)
+{
+  xbar&lt;-mean(x)
+  n&lt;-length(x)
+  ss&lt;-sum((x-xbar)^2)
+  v&lt;-ss/(n-1)
+  return(list(xbar=xbar,v=v))
+}
+
+x&lt;-c(1:3)
+f(x,n)</code></pre>
+<pre><code>$xbar
+[1] 2
+
+$v
+[1] 1</code></pre>
+<p>Now to check if our function is correct, we have intrinsic functions or built-in functions in R to calculate the mean and the variance for data set. So,</p>
+<pre class="r"><code>mean(x);var(x)</code></pre>
+<pre><code>[1] 2</code></pre>
+<pre><code>[1] 1</code></pre>
+<p>Good luck and Happy coding. Thanks</p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -184,5 +184,5 @@ mean(x);var(x)
 ```
 
 
-Good luck and Happy coding.
+Good luck and Happy coding. Thanks
 
