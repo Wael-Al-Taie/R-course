@@ -65,6 +65,7 @@ We can check if the variable is double or not using the following function.
 ```{r,comment=NA}
 x<-5
 is.double(x)
+
 ```
 So the answer is true. That means the variable x is double in R.
 
