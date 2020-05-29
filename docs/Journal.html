@@ -417,6 +417,10 @@ d+e</code></pre>
 <pre><code>[1]  5 12 21</code></pre>
 <pre class="r"><code>d/e</code></pre>
 <pre><code>[1] 0.2000000 0.3333333 0.4285714</code></pre>
+<pre class="r"><code>x&lt;-4
+y&lt;-x+6
+y</code></pre>
+<pre><code>[1] 10</code></pre>
 </div>
 <div id="data-types" class="section level1">
 <h1>Data types</h1>
@@ -430,9 +434,37 @@ is.double(x)</code></pre>
 <pre><code>[1] TRUE</code></pre>
 <p>So the answer is true. That means the variable x is double in R.</p>
 <ul>
-<li><p>Character data:</p></li>
-<li><p>Logical data:</p></li>
+<li>Character data: We use quotes to represent this type of data.</li>
 </ul>
+<pre class="r"><code>y&lt;-&quot;brown&quot;
+is.double(y)</code></pre>
+<pre><code>[1] FALSE</code></pre>
+<pre class="r"><code>is.character(y)</code></pre>
+<pre><code>[1] TRUE</code></pre>
+<p>So, y is a character.</p>
+<ul>
+<li>Logical data: It is also called boolean. These type of variables can take either TRUE or FALSE.</li>
+</ul>
+<pre class="r"><code>d&lt;- TRUE
+is.logical(d)</code></pre>
+<pre><code>[1] TRUE</code></pre>
+<p>There are some other types od data such as</p>
+<ul>
+<li>NA : Not Available.</li>
+<li>NaN : Not a Number. It is mathematically undefined.</li>
+<li>Null : empty variable.</li>
+<li>Inf, -Inf. For example,</li>
+</ul>
+<pre class="r"><code>s&lt;-0/0
+s</code></pre>
+<pre><code>[1] NaN</code></pre>
+<pre class="r"><code>z&lt;-c()
+z</code></pre>
+<pre><code>NULL</code></pre>
+<pre class="r"><code>6/0</code></pre>
+<pre><code>[1] Inf</code></pre>
+<pre class="r"><code>-2/0</code></pre>
+<pre><code>[1] -Inf</code></pre>
 </div>
 <div id="vectors" class="section level1">
 <h1>Vectors</h1>
@@ -445,7 +477,7 @@ is.double(x)</code></pre>
 <p>If you would like to make a histogram in R. For instance, we want to generate a sample with 100 numbers from a normal distribution with mean = 0, and standard deviation = 0.5, and then we want to plot a histogram. We can do this here by using the folowing R code:</p>
 <pre class="r"><code>samples &lt;- rnorm(100, mean=0, sd=0.5)
 hist(samples,breaks=10)</code></pre>
-<p><img src="Journal_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="Journal_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <pre class="r"><code>#hist(samples, prob)
 #lines(density(samples),col=4)</code></pre>
 </div>
@@ -490,13 +522,13 @@ print(a)</code></pre>
 <pre class="r"><code>z&lt;-rnorm(10,0,0.1)
 hist(z,probability=TRUE)
 lines(density(z),col=4)</code></pre>
-<p><img src="Journal_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="Journal_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <pre class="r"><code>(z+5)</code></pre>
-<pre><code> [1] 4.993138 4.920617 5.048647 4.984269 5.011087 4.821314 5.081397 5.078800
- [9] 5.055427 4.948113</code></pre>
+<pre><code> [1] 4.901754 5.157238 4.987952 4.839805 4.764575 5.057148 4.822742 5.234661
+ [9] 5.147943 5.113312</code></pre>
 <pre class="r"><code>summary(z) ### Give summary of the distribution</code></pre>
 <pre><code>     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
--0.178686 -0.042848  0.002113 -0.005719  0.053732  0.081397 </code></pre>
+-0.235425 -0.144708  0.022550  0.002713  0.139285  0.234661 </code></pre>
 </div>
 <div id="laplace-approximation" class="section level1">
 <h1>Laplace approximation</h1>

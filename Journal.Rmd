@@ -54,6 +54,10 @@ d+e
 d*e
 d/e
 
+x<-4
+y<-x+6
+y
+
 ```
 
 # Data types
@@ -70,9 +74,36 @@ is.double(x)
 So the answer is true. That means the variable x is double in R.
 
 
-- Character data:
+- Character data: We use quotes to represent this type of data.
+```{r, comment=NA}
+y<-"brown"
+is.double(y)
+is.character(y)
+```
+So, y is a character.
 
-- Logical data:
+- Logical data: It is also called boolean. These type of variables can take either TRUE or FALSE.
+```{r,comment=NA}
+d<- TRUE
+is.logical(d)
+```
+There are some other types od data such as
+
+- NA : Not Available.
+- NaN : Not a Number. It is mathematically undefined.
+- Null : empty variable.
+- Inf, -Inf. For example,
+```{r,comment=NA}
+s<-0/0
+s
+
+z<-c()
+z
+
+6/0
+
+-2/0
+```
 
 # Vectors
 
