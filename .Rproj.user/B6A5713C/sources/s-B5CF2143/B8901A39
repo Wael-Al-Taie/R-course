@@ -5,14 +5,14 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3972353288",
+    "hash" : "0",
     "id" : "B8901A39",
-    "lastKnownWriteTime" : 1591030607,
-    "last_content_update" : 1591030607972,
+    "lastKnownWriteTime" : 1591031058,
+    "last_content_update" : 1591031058224,
     "path" : "C:/Users/User/Desktop/TestGitHub/R-course/research.Rmd",
     "project_path" : "research.Rmd",
     "properties" : {
-        "cursorPosition" : "1,12",
+        "cursorPosition" : "1,9",
         "scrollLine" : "0"
     },
     "read_only" : false,
