@@ -3,7 +3,7 @@ navbar:
   title: "Wael Abdulateef Al-Taie"
   left:
     - text: "Research"
-      href: Research.html
+      href:  research.html
     - text: "Programming"
-      href: Software.html
+      href:  software.html
 output_dir: "docs"
