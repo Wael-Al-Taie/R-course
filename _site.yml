@@ -2,8 +2,8 @@ name: "Wael's Site"
 navbar:
   title: "Wael Abdulateef Al-Taie"
   left:
-    - text: "research"
+    - text: "Research"
       href:  research.html
-    - text: "programming"
+    - text: "Programming"
       href:  software.html
 output_dir: "docs"
