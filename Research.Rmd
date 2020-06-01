@@ -1,6 +1,4 @@
 ---
-title: "Bayesian"
-output: html_document
 ---
 
 <style type="text/css">
