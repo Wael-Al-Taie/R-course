@@ -5,14 +5,14 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "1652226409",
     "id" : "7C3A65A",
-    "lastKnownWriteTime" : 1591031033,
-    "last_content_update" : 1591031033586,
+    "lastKnownWriteTime" : 1591031190,
+    "last_content_update" : 1591031190968,
     "path" : "C:/Users/User/Desktop/TestGitHub/R-course/_site.yml",
     "project_path" : "_site.yml",
     "properties" : {
-        "cursorPosition" : "4,14",
+        "cursorPosition" : "7,14",
         "scrollLine" : "0"
     },
     "read_only" : false,

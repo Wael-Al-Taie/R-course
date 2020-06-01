@@ -5,5 +5,5 @@ navbar:
     - text: "Research"
       href:  research.html
     - text: "Programming"
-      href:  software.html
+      href:  Software.html
 output_dir: "docs"
