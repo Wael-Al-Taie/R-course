@@ -16,6 +16,7 @@ I have a bit knowledge in programming languages such as S-Plus, R and Octave. I 
 
 I am an experienced and enthusiastic statistician and I teach Maths as well.
 
+<!-- &nbsp; add space to the line. --> 
 
 <!-- ## How to use -->
 
