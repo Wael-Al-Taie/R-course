@@ -1,0 +1,277 @@
+---
+title: ""
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    collapsed: false
+    number_sections: false
+    toc_depth: 1
+    #code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE)
+```
+<p>&nbsp;</p>
+
+# About <tt>`R`</tt> and <tt>`RStudio`</tt>
+R is a free open-source programming language that can be used widely for statistical analysis. Another free program is Rstudio, that provides a nice graphic interface for R. We need to download R first, then download Rstudio. Both can run on PCs, Macs or Linux.
+
+# Introduction to <tt>`R`</tt>
+This is a mini course about R programming language with some useful and important functions that we need to know before we learn more advanced and tricky functions. I hope you enjoy it and please feel free to ask questions. 
+
+We can use R as a calculator. We can use addition, subtraction, multiplication and division very easily in R. For example,
+
+```{r,comment=NA}
+15+20
+12*12 # * is multiplication sign.
+126/3 # / is division sign.
+(2+5+7)/5
+```
+if you want to know more information about any function in R, you need to type help("function name") or ?function name.
+
+- Notice that everyting comes after hashtag \# will be ignored by R.
+
+<!-- # Laplace approximation -->
+<!-- If we have one-dimensional numerical integration, to find out that integration. We could possibly use a Laplace approximation. -->
+
+
+<!-- # Example from my thesis. -->
+
+# Variable assignment
+
+Put numbers into variables, do simple math on the variables
+
+```{r, comment=NA}
+a<-1
+b<-2
+a+b
+
+d<-c(1,2,3)
+e<-c(5,6,7)
+d+e
+d*e
+d/e
+
+x<-4
+y<-x+6
+y
+
+```
+
+# Data types
+There are different types of data in R such as double, character and logical data.
+
+- Double data: When we deal with "numbers" in R, then the type of data is called <span style="color:blue;">double</span>.
+
+We can check if the variable is double or not using the following function.
+```{r,comment=NA}
+x<-5
+is.double(x)
+
+```
+So the answer is true. That means the variable x is double in R.
+
+
+- Character data: We use quotes to represent this type of data.
+```{r, comment=NA}
+y<-"brown"
+is.double(y)
+is.character(y)
+```
+So, y is a character.
+
+- Logical data: It is also called boolean. These type of variables can take either TRUE or FALSE.
+```{r,comment=NA}
+d<- TRUE
+is.logical(d)
+```
+There are some other types od data such as
+
+- NA : Not Available.
+- NaN : Not a Number. It is mathematically undefined.
+- Null : empty variable.
+- Inf, -Inf. For example,
+```{r,comment=NA}
+s<-0/0
+s
+
+z<-c()
+z
+
+6/0
+
+-2/0
+```
+
+# Vectors
+Vectors are basic data structure in R, we use vectors almost in any code or function in R. Suppose we have a vector with <tt>`n=5`</tt> elements. We can represent this vector in R as
+```{r,comment=NA}
+a<-c(12,45,27,76,98) ## we use lower c to represent the vectors    in R.
+print(a)
+
+(a<-c(12,45,27,76,98))
+
+length(a) ## we use length in R to know how many values we have    in the vector a for example. so here, the length of the vector a is 5.
+
+```
+We can use a colon to represent a vector in R.
+```{r,comment=NA}
+x<-1:10
+x
+```
+or we can write x as
+```{r,comment=NA}
+x<-c(1:10)
+x
+```
+We can also define a vector in R as a sequence in the following way
+```{r,comment=NA}
+z<-seq(from=1,to=10,by=1)
+z
+```
+or
+```{r,comment=NA}
+z<-seq(1,10)
+z
+```
+We can do some manipulation to vectors in R, for example we can use the functions: sum(), mean(), var(), sd(), max(), min(), sort, range() and so on.
+```{r,comment=NA}
+x<-c(4,5,1,-2)
+sum(x)  ## the summation of the values in the vector.
+mean(x) ## the average of the values in x.
+var(x)  ## the variance.
+sd(x)   ## the standard deviation of x.
+max(x)  ## the maximum value of x.
+min(x)  ## the minimum value of x.
+sort(x) ## sort the values in the vector fro the smallest to the largest.
+range(x) ## this gives us the minimum and the maximum values in   the vector x.
+
+```
+We can choose some elements from any vector in R.
+```{r,comment=NA}
+x<-c(12,32,52,78,66)
+x[2] ## this means we choose the second element from the vector x.
+x[3:5] ## We choose the elements 3,4 and 5 from vector x.
+
+```
+we can also choose certain elements from a vector with some conditions, for example
+```{r,comment=NA}
+x[x>55]
+```
+or we can use the function which()
+```{r,comment=NA}
+which(x>50) ## here we ask which of our elements are greater than 50, we have the 3rd, 4th and the 5th elements from vector x.
+```
+
+
+# Matrices
+A matrix in R contains rows and columns. To define the matrix in R,
+```{r,comment=NA}
+a<-matrix(c(10,15,20,25),nrow=2,ncol=2)
+a  ## the default matrix in R is filling the matrix using column after column. The dimension of the matrix a is 2X2.
+```
+if we want to fill the matrix row after row, we give option to the matrix <tt>`byrow=TRUE`</tt>.
+```{r,comment=NA}
+b<-matrix(c(10,15,20,25),nrow=2,ncol=2,byrow=TRUE)
+b 
+```
+If we want to know the dimension of the matrix say for example b,
+```{r,comment=NA}
+dim(b) ## dimension of matrix b.
+
+s<-matrix(1:6,nrow=2,ncol=3)
+s
+dim(s)
+```
+We can find the transpose of the matrix using t()
+```{r,comment=NA}
+d<-t(s)  ## transpose of matrix s
+d
+dim(d)
+```
+if we want to choose only the first row from matrix d, we use
+```{r,comment=NA}
+d[1,] ## 
+```
+we read it as [row,column] or isolate the second column from matrix d,
+```{r,comment=NA}
+d[,2]
+```
+or we would like to choose specific element from the matrix d, say the element in the third row and the second column.
+```{r,comment=NA}
+d[3,2] ## the element is 6.
+```
+
+
+# Simple stuff to do with <tt>`R`</tt>
+
+If you would like to make a histogram in R. For instance, we want to generate a sample with 100 numbers from a normal distribution with mean = 0, and standard deviation = 0.5, and then we want to plot a histogram. We can do this here by using the folowing R code:
+
+```{r}
+samples <- rnorm(100, mean=0, sd=0.5)
+hist(samples)
+```
+
+
+<!-- # What can you do right now by yourself? -->
+
+<!-- It's hard to learn programming when you don't have specific problems that you are trying to solve. Everything just seems abstract. -->
+
+<!-- I wrote an [introductory programming book that introduces R](https://crumplab.github.io/programmingforpsych/), and gives some [concrete problems for you to solve](https://crumplab.github.io/programmingforpsych/programming-challenges-i-learning-the-fundamentals.html).  -->
+
+
+<!-- # Laplace approximation -->
+<!-- ```{r,comment=NA} -->
+<!-- ### It is true and I checked it for Bernoulli likelihood and -->
+<!-- ### normal prior distribution with variance=1. Albumin has 0 and 1. -->
+
+<!-- Laplacealbumin<-function(y,E0,tol=1E-5,n=20) -->
+<!-- {#MF 04/10/18 -->
+<!--   z0<-E0 -->
+<!--   d<-1 -->
+<!--   for (i in 1:n) -->
+<!--   {if (abs(d)>tol) -->
+<!--   {ez<-exp(z0) -->
+<!--   pz<-ez/(1+ez) -->
+<!--   f<-y-(z0-E0)-pz -->
+<!--   fd<--(1+pz*(1-pz)) -->
+<!--   d<-f/fd -->
+<!--   z0<-z0-d -->
+<!--   } -->
+<!--   } -->
+<!--   mean<-z0 -->
+<!--   var<- -1/fd -->
+<!--   return(list(E1=mean,V1=var)) -->
+<!-- } -->
+
+<!-- Laplacealbumin(y=1,E0=0,tol=1E-5,n=20) -->
+<!-- ``` -->
+
+<!-- Simple function to find the mean and the variance of a set of data. -->
+<!-- ```{r,comment=NA} -->
+<!-- ## Simple function to find the mean and the variance for  -->
+<!-- ## set of data. -->
+
+<!-- f<-function(x,n) -->
+<!-- { -->
+<!--   xbar<-mean(x) -->
+<!--   n<-length(x) -->
+<!--   ss<-sum((x-xbar)^2) -->
+<!--   v<-ss/(n-1) -->
+<!--   return(list(xbar=xbar,v=v)) -->
+<!-- } -->
+
+<!-- x<-c(1:3) -->
+<!-- f(x,n) -->
+<!-- ``` -->
+<!-- Now to check if our function is correct, we have intrinsic functions or built-in functions in R to calculate the mean and the variance for data set. So, -->
+<!-- ```{r, comment=NA} -->
+<!-- mean(x);var(x) -->
+
+<!-- ``` -->
+
+
+<!-- Good luck and Happy coding. Thanks -->
+

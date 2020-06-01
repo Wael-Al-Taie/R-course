@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1591026381703.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "41958469",
+    "id" : "DCDD9CDC",
+    "lastKnownWriteTime" : 1590789535,
+    "last_content_update" : 1590789535,
+    "path" : "C:/Users/User/Desktop/TestGitHub/R-course/Software.Rmd",
+    "project_path" : "Software.Rmd",
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
