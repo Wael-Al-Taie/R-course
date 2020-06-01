@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1591028366802.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1565657277",
+    "id" : "10919D83",
+    "lastKnownWriteTime" : 1591028512,
+    "last_content_update" : 1591028512197,
+    "path" : "C:/Users/User/Desktop/TestGitHub/R-course/Background1.Rmd",
+    "project_path" : "Background1.Rmd",
+    "properties" : {
+        "cursorPosition" : "5,16",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

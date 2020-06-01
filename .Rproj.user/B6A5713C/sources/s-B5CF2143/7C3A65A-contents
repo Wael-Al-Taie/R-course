@@ -1,0 +1,9 @@
+name: "Wael's Site"
+navbar:
+  title: "Wael Abdulateef Al-Taie"
+  left:
+    - text: "Research"
+      href: Background1.html
+    - text: "Programming"
+      href: Journal.html
+output_dir: "docs"
