@@ -12,7 +12,7 @@ My Research interest in the area of Bayesian statistics and focus on Bayes linea
 
 I have published two papers in journals in statistics. I am planning to publish a paper with my supervisor Dr. Malcolm Farrow in the journal of Bayesian analysis.
 
-I have a bit knowledge in programming languages such as S-Plus, R and Octave. I have done most of my research work using R during my study.
+I have a basic knowledge in programming languages such as S-Plus, R and Octave. I have done most of my research work using R during my study.
 
 I am an experienced and enthusiastic statistician and I teach Maths as well.
 
