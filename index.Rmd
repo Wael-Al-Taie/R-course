@@ -16,6 +16,8 @@ I have a basic knowledge in programming languages such as S-Plus, R and Octave. 
 
 I am an experienced and enthusiastic statistician and I teach Maths as well.
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Google Scholar:** [Click here](https://scholar.google.co.uk/citations?user=XMRPZBYAAAAJ&hl=en)
+
 <!-- &nbsp; add space to the line. --> 
 
 <!-- ## How to use -->
