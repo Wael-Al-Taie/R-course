@@ -210,7 +210,7 @@ d[3,2] ## the element is 6.
 If you would like to make a histogram in R. For instance, we want to generate a sample with 100 numbers from a normal distribution with mean = 0, and standard deviation = 0.5, and then we want to plot a histogram. We can do this here by using the folowing R code:
 
 ```{r}
-samples <- rnorm(100, mean=0, sd=0.5)
+samples <- rnorm(1000, mean=0, sd=0.5)
 hist(samples)
 ```
 
