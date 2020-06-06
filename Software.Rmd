@@ -214,6 +214,23 @@ samples <- rnorm(100, mean=0, sd=0.5)
 hist(samples)
 ```
 
+and simple R function to find the mean and the variance for set of data.
+```{r, comment=NA}
+f<-function(x,n)
+{
+  xbar<-mean(x)
+  n<-length(x)
+  ss<-sum((x-xbar)^2)
+  variance<-ss/(n-1)
+  sdev<-sqrt(variance)
+  return(list(xbar=xbar,variance=variance,sdev=sdev))
+}
+
+x<-c(1:5)
+f(x,n)
+```
+
+
 
 <!-- # What can you do right now by yourself? -->
 
