@@ -232,7 +232,7 @@ f(x,n)
 
 
 
-# Simple example for Bayes linear methods
+# Simple example of Bayes linear analysis
 ```{r, comment=NA}
 f1<-function(X,y){
   P0<-solve(V0_beta)
