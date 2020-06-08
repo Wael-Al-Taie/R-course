@@ -232,6 +232,44 @@ f(x,n)
 
 
 
+# Simple example for Bayes linear methods
+```{r, comment=NA}
+f1<-function(X,y){
+  P0<-solve(V0_beta)
+  Xt<-t(X)
+  A<-Xt%*%X
+  Xty<-Xt%*%y
+  betahat<-solve(A,Xty)
+  n<-length(y)
+  Pd<-diag(1/2,2)%*%A
+  P1<-P0+Pd
+  V1<-solve(P1)
+  k<-P0%*%E0+Pd%*%betahat
+  E1<-solve(P1,k)
+  result<-return(list(P0=P0,Pd=Pd,P1=P1,E1=E1,V1=V1))
+}
+
+V0_beta<-matrix(c(36.5,-4,-4,.5),ncol=2)
+E0<-c(55.7,1.7)
+
+y<-c(65, 72, 71 ,64 ,67, 65 ,65 ,67 ,68 ,72 ,67 ,72 ,66 ,64 ,65,
+     66 ,68 ,74, 68 ,73 ,68 ,69 ,71, 65, 72 ,67, 71, 67, 68, 71,
+     68 ,65,72, 71, 78 ,65 ,71, 71, 70 ,66 ,71 ,64 ,63 ,68 , 66,
+     71 ,70 ,72 ,64 ,65 ,70 ,68)
+
+X<-matrix(nrow=52,ncol=2)
+v1<-c(rep(1,52))
+v0<-c(7.0 ,10.0  ,8.5 , 5.0,  7.5 , 6.0 , 7.0 , 8.0 , 6.5 ,10.0, 7.0, 10.0 , 6.5,  5.5 , 6.0 , 7.5 , 8.0 ,11.0 , 7.0 ,11.0 , 8.0, 10.0 ,10.0, 6.0 ,10.5 , 8.5  ,9.5 , 7.0 , 8.0  ,9.5  ,6.5 , 6.0,
+10.0 ,9.0 ,13.0 , 5.5, 10.0 , 8.5  ,9.0  ,7.5 , 9.0 , 4.5, 4.5, 
+7.0 , 6.0, 10.0, 9.0 , 9.5 , 5.5,  6.0 , 8.5 , 7.0)
+X[,1]<-v1
+X[,2]<-v0
+
+f1(X,y)
+```
+
+
+
 <!-- # What can you do right now by yourself? -->
 
 <!-- It's hard to learn programming when you don't have specific problems that you are trying to solve. Everything just seems abstract. -->

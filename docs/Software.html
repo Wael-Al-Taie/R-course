@@ -587,6 +587,65 @@ $variance
 
 $sdev
 [1] 1.581139</code></pre>
+</div>
+<div id="simple-example-for-bayes-linear-methods" class="section level1">
+<h1>Simple example for Bayes linear methods</h1>
+<pre class="r"><code>f1&lt;-function(X,y){
+  P0&lt;-solve(V0_beta)
+  Xt&lt;-t(X)
+  A&lt;-Xt%*%X
+  Xty&lt;-Xt%*%y
+  betahat&lt;-solve(A,Xty)
+  n&lt;-length(y)
+  Pd&lt;-diag(1/2,2)%*%A
+  P1&lt;-P0+Pd
+  V1&lt;-solve(P1)
+  k&lt;-P0%*%E0+Pd%*%betahat
+  E1&lt;-solve(P1,k)
+  result&lt;-return(list(P0=P0,Pd=Pd,P1=P1,E1=E1,V1=V1))
+}
+
+V0_beta&lt;-matrix(c(36.5,-4,-4,.5),ncol=2)
+E0&lt;-c(55.7,1.7)
+
+y&lt;-c(65, 72, 71 ,64 ,67, 65 ,65 ,67 ,68 ,72 ,67 ,72 ,66 ,64 ,65,
+     66 ,68 ,74, 68 ,73 ,68 ,69 ,71, 65, 72 ,67, 71, 67, 68, 71,
+     68 ,65,72, 71, 78 ,65 ,71, 71, 70 ,66 ,71 ,64 ,63 ,68 , 66,
+     71 ,70 ,72 ,64 ,65 ,70 ,68)
+
+X&lt;-matrix(nrow=52,ncol=2)
+v1&lt;-c(rep(1,52))
+v0&lt;-c(7.0 ,10.0  ,8.5 , 5.0,  7.5 , 6.0 , 7.0 , 8.0 , 6.5 ,10.0, 7.0, 10.0 , 6.5,  5.5 , 6.0 , 7.5 , 8.0 ,11.0 , 7.0 ,11.0 , 8.0, 10.0 ,10.0, 6.0 ,10.5 , 8.5  ,9.5 , 7.0 , 8.0  ,9.5  ,6.5 , 6.0,
+10.0 ,9.0 ,13.0 , 5.5, 10.0 , 8.5  ,9.0  ,7.5 , 9.0 , 4.5, 4.5, 
+7.0 , 6.0, 10.0, 9.0 , 9.5 , 5.5,  6.0 , 8.5 , 7.0)
+X[,1]&lt;-v1
+X[,2]&lt;-v0
+
+f1(X,y)</code></pre>
+<pre><code>$P0
+          [,1]      [,2]
+[1,] 0.2222222  1.777778
+[2,] 1.7777778 16.222222
+
+$Pd
+       [,1]     [,2]
+[1,]  26.00  206.750
+[2,] 206.75 1735.875
+
+$P1
+          [,1]      [,2]
+[1,]  26.22222  208.5278
+[2,] 208.52778 1752.0972
+
+$E1
+          [,1]
+[1,] 55.703848
+[2,]  1.597971
+
+$V1
+            [,1]        [,2]
+[1,]  0.71222057 -0.08476571
+[2,] -0.08476571  0.01065923</code></pre>
 <!-- # What can you do right now by yourself? -->
 <!-- It's hard to learn programming when you don't have specific problems that you are trying to solve. Everything just seems abstract. -->
 <!-- I wrote an [introductory programming book that introduces R](https://crumplab.github.io/programmingforpsych/), and gives some [concrete problems for you to solve](https://crumplab.github.io/programmingforpsych/programming-challenges-i-learning-the-fundamentals.html).  -->
