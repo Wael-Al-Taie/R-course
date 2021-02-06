@@ -388,7 +388,7 @@ div.tocify {
 <pre><code>[1] 42</code></pre>
 <pre class="r"><code>(2+5+7)/5</code></pre>
 <pre><code>[1] 2.8</code></pre>
-<p>if you want to know more information about any function in R, you need to type help(“function name”) or ?function name.</p>
+<p>if you want to know more information about any function in R, you need to type help(&quot;function name&quot;) or ?function name.</p>
 <ul>
 <li>Notice that everyting comes after hashtag # will be ignored by R.</li>
 </ul>
@@ -420,7 +420,7 @@ y</code></pre>
 <h1>Data types</h1>
 <p>There are different types of data in R such as double, character and logical data.</p>
 <ul>
-<li>Double data: When we deal with “numbers” in R, then the type of data is called <span style="color:blue;">double</span>.</li>
+<li>Double data: When we deal with &quot;numbers&quot; in R, then the type of data is called <span style="color:blue;">double</span>.</li>
 </ul>
 <p>We can check if the variable is double or not using the following function.</p>
 <pre class="r"><code>x&lt;-5
@@ -745,7 +745,7 @@ $(document).ready(function ()  {
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
       },
       ignoreSelector: ".toc-ignore",
       scrollTo: 0
